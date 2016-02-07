@@ -46,6 +46,8 @@ Description: bar code scanner and decoder (debug)
 
 Package: libzbar0
 Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: bar code scanner and decoder (library)
  ZBar is a library for scanning and decoding bar codes from various sources
@@ -57,6 +59,7 @@ Description: bar code scanner and decoder (library)
 Package: libzbar-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends: libzbar0 (= ${binary:Version}), ${misc:Depends}, libmagick++-dev, libx11-dev
 Description: bar code scanner and decoder (development)
  ZBar is a library for scanning and decoding bar codes from various sources
@@ -93,6 +96,8 @@ Description: bar code scanner and decoder (PyGTK bindings)
 
 Package: libzbargtk0
 Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}, libzbar0 (= ${binary:Version})
 Description: bar code scanner and decoder (GTK+ bindings)
  ZBar is a library for scanning and decoding bar codes from various sources
@@ -104,6 +109,7 @@ Description: bar code scanner and decoder (GTK+ bindings)
 Package: libzbargtk-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends: libzbargtk0 (= ${binary:Version}), ${misc:Depends}, libgtk2.0-dev,
  libzbar-dev (= ${binary:Version})
 Description: bar code scanner and decoder (GTK+ bindings development)
@@ -115,6 +121,8 @@ Description: bar code scanner and decoder (GTK+ bindings development)
 
 Package: libzbarqt0
 Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}, libzbar0 (= ${binary:Version})
 Description: bar code scanner and decoder (Qt bindings)
  ZBar is a library for scanning and decoding bar codes from various sources
@@ -126,6 +134,7 @@ Description: bar code scanner and decoder (Qt bindings)
 Package: libzbarqt-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends: libzbarqt0 (= ${binary:Version}), ${misc:Depends}, libqt4-dev,
  libzbar-dev (= ${binary:Version})
 Description: bar code scanner and decoder (Qt bindings development)

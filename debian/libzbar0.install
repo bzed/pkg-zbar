@@ -1,1 +1,1 @@
-/usr/lib/libzbar.so.*
+/usr/lib/*/libzbar.so.*

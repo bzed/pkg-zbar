@@ -3,6 +3,7 @@
 DEB_HOST_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE	?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 DEB_HOST_ARCH_OS	?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_MULTIARCH	?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 VERSION:=$(strip $(shell dpkg-parsechangelog| grep '^Version' | awk '{print $$2}'))
 
@@ -94,6 +95,10 @@ install: build
 	dh_prep
 	$(MAKE) -C build-nopython install DESTDIR=$(CURDIR)/debian/tmp
 	$(MAKE) -C perl install DESTDIR=$(PERL_TMP) PREFIX=/usr
+
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
+	mv debian/tmp/usr/lib/lib* debian/tmp/usr/lib/pkgconfig \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/.
 
 	set -e; for i in $(PYVERS); do \
 		$(MAKE) -C build-python$${i} install-pyexecLTLIBRARIES DESTDIR=$(CURDIR)/debian/tmp ;\

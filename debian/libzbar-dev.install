@@ -8,6 +8,6 @@
 /usr/include/zbar/Symbol.h
 /usr/include/zbar/Video.h
 /usr/include/zbar/Window.h
-/usr/lib/libzbar.a
-/usr/lib/libzbar.so
-/usr/lib/pkgconfig/zbar.pc
+/usr/lib/*/libzbar.a
+/usr/lib/*/libzbar.so
+/usr/lib/*/pkgconfig/zbar.pc
